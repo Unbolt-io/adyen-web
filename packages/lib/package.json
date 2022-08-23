@@ -1,13 +1,6 @@
 {
-    "name": "@adyen/adyen-web",
-    "keywords": [
-        "adyen",
-        "adyen-web",
-        "checkout",
-        "payment",
-        "payments",
-        "components"
-    ],
+    "name": "@unbolt/adyen-web",
+    "keywords": [],
     "main": "dist/cjs/index.js",
     "module": "dist/es/index.js",
     "umd:main": "dist/adyen.js",
@@ -22,13 +15,10 @@
         "./dist/adyen.css": "./dist/adyen.css",
         "./package.json": "./package.json"
     },
-    "version": "4.9.0",
+    "version": "4.9.1",
     "license": "MIT",
-    "homepage": "https://docs.adyen.com/checkout",
-    "repository": "github:Adyen/adyen-web",
-    "bugs": {
-        "url": "https://support.adyen.com/"
-    },
+    "homepage": "https://unbolt.io",
+    "repository": "git+https://github.com/Unbolt-io/adyen-web.git",
     "scripts": {
         "start": "npm run dev-server",
         "start:fast": "EXPERIMENTAL_DEVBUILD=true npm run dev-server",

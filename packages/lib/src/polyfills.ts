@@ -6,21 +6,31 @@ import 'core-js/es/array/find-index';
 import 'core-js/es/promise';
 
 // ChildNode.remove()
-(function(arr) {
-    arr.forEach(function(item) {
-        if (item.hasOwnProperty('remove')) {
-            return;
-        }
-        Object.defineProperty(item, 'remove', {
-            configurable: true,
-            enumerable: true,
-            writable: true,
-            value: function remove() {
-                if (this.parentNode === null) {
-                    return;
-                }
-                this.parentNode.removeChild(this);
+(function() {
+  function polyfill(item) {
+    if (item.hasOwnProperty('remove')) {
+        return;
+    }
+    Object.defineProperty(item, 'remove', {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        value: function remove() {
+            if (this.parentNode === null) {
+                return;
             }
-        });
+            this.parentNode.removeChild(this);
+        }
     });
-})([Element.prototype, CharacterData.prototype, DocumentType.prototype]);
+  }
+
+  if (typeof Element !== 'undefined') {
+      polyfill(Element.prototype);
+  }
+  if (typeof CharacterData !== 'undefined') {
+      polyfill(CharacterData.prototype);
+  }
+  if (typeof DocumentType !== 'undefined') {
+      polyfill(DocumentType.prototype);
+  }
+})();
