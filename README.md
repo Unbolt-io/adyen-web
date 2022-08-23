@@ -1,3 +1,10 @@
+# @unbolt/adyen-web
+Unbolt has forked this repository in order to make npm v4.9.0 of `@adyen/adyen-web` compatible with SSR.
+
+Note: as of today this library has not been published as our requirement to support Adyen 4 was dropped as of this writing.
+
+---
+
 # Adyen Web
 
 [![npm](https://img.shields.io/npm/v/@adyen/adyen-web.svg)](http://npm.im/@adyen/adyen-web)
